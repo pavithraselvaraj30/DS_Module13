@@ -1,7 +1,7 @@
-# EX 1 Display operator precedence in the infix expression.
+# EX 1 You’re creating a health monitoring device which stores several sensor readings in an array. To determine the minimum value (e.g., lowest heartbeat), implement a recursive method.
 ## DATE:
 ## AIM:
-To write a C program to find and display the priority of the operator in the given Postfix expression
+To write a JAVA program To determine the minimum value (e.g., lowest heartbeat), implement a recursive method.
 
 ## Algorithm
 1. 
@@ -13,7 +13,7 @@ To write a C program to find and display the priority of the operator in the giv
 ## Program:
 ```
 /*
-Program to find and display the priority of the operator in the given Postfix expression
+Program To determine the minimum value (e.g., lowest heartbeat), implement a recursive method.
 Developed by: 
 RegisterNumber:  
 */
@@ -24,4 +24,4 @@ RegisterNumber:
 
 
 ## Result:
-Thus the C program to find and display the priority of the operator in the given Postfix expression is implemented successfully
+Thus the JAVA prograM ti find the minimum value (e.g., lowest heartbeat), implement a recursive method has implemented successfully
