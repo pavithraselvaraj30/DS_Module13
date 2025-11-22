@@ -1,86 +1,57 @@
-# EX 1 Display operator precedence in the infix expression.
-
+# EX 1 You’re creating a health monitoring device which stores several sensor readings in an array. To determine the minimum value (e.g., lowest heartbeat), implement a recursive method.
+## DATE: 20.11.2025
 ## AIM:
-To write a C program to find and display the priority of the operator in the given Postfix expression
+To write a JAVA program To determine the minimum value (e.g., lowest heartbeat), implement a recursive method.
 
 ## Algorithm
-1. Start the program.
-2. Define the priority() function to return the priority of operators.
-3. Initialize the string containing operators and operands.
-4. Loop throuh each character in the string.
-5. For each operator, call the priority() function to determine its priority.
-6. Print the operator and its corresponding priority level.
-7. End the program.
+1. Start
+2. Read n – the number of heartbeat values.
+3. Read the n heartbeat values into an array.
+4. Call the recursive method findMin(arr, index)
+5. Recursive logic:
+6. Display the minimum heartbeat value returned by the recursive function.
+7. Stop
 
 ## Program:
 ```
 /*
-Program to find and display the priority of the operator in the given Postfix expression
-Developed by: PAVITHRA S
+Program To determine the minimum value (e.g., lowest heartbeat), implement a recursive method.
+Developed by: Pavithra S
 RegisterNumber:  212223230147
 */
-#include <stdio.h> 
-#include<string.h> 
-int priority(char x) 
-{ 
- 
-if(x == '&' || x == '|') 
-return 1; 
-if(x == '+' || x == '-') 
-return 2; 
-if(x == '*' || x == '/' || x == '%') 
-return 3; 
-if(x == '^') 
-return 4; 
-return 0; 
-} 
- 
-int main() 
-{ 
-int i,j; 
-char ch[100]="(A*B)^C+(D%H)/F&G"; 
-for(i=0;i<strlen(ch);i++) 
-{ 
-if(ch[i]=='+'|| 
-ch[i]=='-'|| 
-ch[i]=='*'|| 
-ch[i]=='/'|| 
-ch[i]=='%'|| 
-ch[i]=='^'|| 
-ch[i]=='&'|| 
-ch[i]=='|') 
-{ 
-j=priority(ch[i]); 
-switch(j) 
-{ 
-case 1: 
-printf("%c ---- > ",ch[i]); 
-printf("Lowest Priority\n"); 
-break; 
-case 2: 
-printf("%c ---- > ",ch[i]); 
-printf("Second Lowest Priority\n"); 
-break; 
-case 3: 
-printf("%c ---- > ",ch[i]); 
-printf("Second Highest Priority\n"); 
-break; 
-case 4: 
-printf("%c ---- > ",ch[i]); 
-printf("Highest Priority\n"); 
-break; 
-} 
-} 
-} 
- 
-return 0; 
+```
+```
+import java.util.Scanner;
+
+public class MinValueRecursion {
+    public static int findMin(int[] arr, int index) {
+        if (index == arr.length - 1) {
+            return arr[index];
+        }
+        int minOfRest = findMin(arr, index + 1);
+        return Math.min(arr[index], minOfRest);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of heartbeat readings: ");
+        int n = sc.nextInt();
+        int[] heartbeat = new int[n];
+        System.out.println("Enter the heartbeat values:");
+        for (int i = 0; i < n; i++) {
+            heartbeat[i] = sc.nextInt();
+        }
+        int minValue = findMin(heartbeat, 0);
+        System.out.println("Minimum (Lowest) Heartbeat Value = " + minValue);
+    }
 }
+
 ```
 
 ## Output:
-![image](https://github.com/user-attachments/assets/3b0d1934-8cd8-412a-8c65-8907779a54b4)
+<img width="459" height="235" alt="image" src="https://github.com/user-attachments/assets/d857b94f-a6ea-4ccc-a2fd-58ac74075c41" />
 
 
 
 ## Result:
-Thus the C program to find and display the priority of the operator in the given Postfix expression is implemented successfully
+Thus the JAVA prograM ti find the minimum value (e.g., lowest heartbeat), implement a recursive method has implemented successfully
