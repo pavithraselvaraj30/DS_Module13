@@ -1,48 +1,47 @@
-# EX3 Implementation of Tower of Hanoi
-
+# EX3 Write a program to count the number of digits in an integer.
+## DATE: 20.11.2025
 ## AIM:
 To write a C program to implement Tower of Hanoi
 
 ## Algorithm
-1. Start the program
-2. Check if n is greater than 0.
-3. Recursively move n-1 disks from source (x) to auxiliary (z) using destination (y).
-4. Print the move of the n-th disk from source (x) to destination (y).
-5.  Recursively move n-1 disks from auxiliary (z) to destination (y) using source (x)
-6.   The function is called initially with TOH(n, 'A', 'B', 'C') where 'A', 'B', and 'C' are the rods
-7.   End the program.
-
+1. Start.
+2. Read the number of disks n.
+3. Call the recursive function tower(n, source, auxiliary, destination).
+4. Recursively move disks: move n-1 disks to auxiliary, move 1 disk to destination, move n-1 disks from auxiliary to destination.
+5. Stop.
 ## Program:
 ```
-/*
-Program to implement Tower of Hanoi
-Developed by: PAVITHRA S
-RegisterNumber:  212223230147
-*/
+Program to to count the number of digits in an integer
+Developed by: Pavithra S
+RegisterNumber: 212223230147
+```
 
-#include<stdio.h> 
-void TOH(int n,char x,char y,char z) 
-{ 
-if(n>0) 
-{ 
-TOH(n-1,x,z,y); 
-printf("%c to %c",x,y); 
-printf("\n"); 
-TOH(n-1,z,y,x); 
-} 
-} 
-int main() 
-{ 
-int n=2; 
-TOH(n,'A','B','C'); 
+```
+public class TowerOfHanoi {
+    public static void tower(int n, char source, char auxiliary, char destination) {
+        if (n == 1) {
+            System.out.println("Move disk 1 from " + source + " to " + destination);
+            return;
+        }
+        tower(n - 1, source, destination, auxiliary);
+        System.out.println("Move disk " + n + " from " + source + " to " + destination);
+        tower(n - 1, auxiliary, source, destination);
+    }
+
+    public static void main(String[] args) {
+
+        int n = 3; 
+
+        System.out.println("Tower of Hanoi for " + n + " disks:");
+        tower(n, 'A', 'B', 'C');  // A = source, B = auxiliary, C = destination
+    }
 }
-
 ```
 
 ## Output:
+<img width="339" height="236" alt="image" src="https://github.com/user-attachments/assets/f647ff56-7711-4329-b7b6-3ff664ef9d79" />
 
-![image](https://github.com/user-attachments/assets/bd342b8d-2fb3-4620-98fa-68ab404ab030)
 
 
 ## Result:
-Thus, the C program to implement Tower of Hanoi using recursion is implemented successfully.
+Thus, the Java program to to count the number of digits in an integer is implemented successfully.
